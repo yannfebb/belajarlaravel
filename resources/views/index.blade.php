@@ -14,7 +14,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        
+                        Selamat datang di dashboard Laravel + AdminLTE.
                     </div>
                 </div>
             </div>
