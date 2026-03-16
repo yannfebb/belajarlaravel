@@ -2,69 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    private $posts;
-    public function __construct()
+    public function index()
     {
-        // Isi data dummy 
-        $this->posts = [
-            [
-                "id" => 1,
-                "judul" => "How to Hack NASA Using CSS",
-                "isi" => "Muhehehehehe",
-                "waktu_pembuatan" => Carbon::now(),
-            ],
-            [
-                "id" => 2,
-                "judul" => "Misteri ';' di JavaScript",
-                "isi" => "Kadang ada, kadang tiada.",
-                "waktu_pembuatan" => Carbon::now()->subDay(),
-            ]
-        ];
+        $posts = Post::latest()->get();
+
+        return view('blog.index', [
+            'posts' => $posts
+        ]);
     }
 
-     public function index()
+    public function show(string $id)
     {
-        return view("blog.index",['posts' => $this->posts]);
+        $post = Post::findOrFail($id);
+
+        return view('blog.show', [
+            'post' => $post
+        ]);
     }
 
-     public function create()
+    public function create()
     {
-        return view("blog.create");
+        return view('blog.create');
     }
 
-     public function store(Request $request)
+    public function store(Request $request)
     {
         
     }
 
-     public function show(string $id)
-    {
-        $post = $this->posts[$id] ?? abort(404);
-
-        return view("blog.show",compact("post","id"));
-    }
-
     public function edit(string $id)
     {
-        return view("blog.edit");
+        
     }
 
-    
     public function update(Request $request, string $id)
     {
         
     }
 
-   
     public function destroy(string $id)
     {
         
     }
-
 }

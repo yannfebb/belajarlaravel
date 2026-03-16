@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::get('index', function () {
     return view('index');
 });
+Route::get('/posts', [PostController::class, 'index']);
 
 use App\Http\Controllers\BlogController;
 
