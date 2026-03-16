@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('miaws', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        Schema::create('post_tag', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('post_id')->constrained()->cascadeOnDelete();
+    $table->foreignId('tag_id')->constrained()->cascadeOnDelete();
+});
+
+
     }
 
     /**
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('miaws');
+        Schema::dropIfExists('tags');
     }
 };
