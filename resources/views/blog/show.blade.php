@@ -8,7 +8,7 @@
             <div class="col-sm-6">
                         {{-- {{ dd($post) }} --}}
 
-                <h1 class="m-0">Detail Post: {{ $post['judul'] }}</h1>
+                <h1 class="m-0">Detail Post: {{ $post->title }}</h1>
             </div>
             <div class="col-sm-6 text-right">
                 <a href="{{ route('blog.index') }}" class="btn btn-secondary btn-sm">
@@ -28,23 +28,31 @@
                         <h3 class="card-title">Informasi Blog</h3>
                     </div>
                     <div class="card-body">
-                        <h3>{{ $post['judul'] }}</h3>
+                        <h3>{{ $post->title }}</h3>
                         
                         <p class="text-muted">
-                            <i class="fa fa-calendar"></i> 
-                            Dibuat pada: {{ is_string($post['waktu_pembuatan']) ? $post['waktu_pembuatan'] : $post['waktu_pembuatan']->format('d M Y H:i') }}
+                            <i class="fa fa-calendar"></i>
+                            Dibuat pada: {{ $post->created_at->format('d M Y H:i') }}
                         </p>
                         
                         <hr>
 
                         <div class="post-content" style="font-size: 1.1rem; line-height: 1.6;">
-                            {{ $post['isi'] }}
+                            {{ $post->content }}
                         </div>
                     </div>
                     <div class="card-footer text-right">
-                        <a href="{{ url('blog/'.$id.'/edit') }}" class="btn btn-warning">
+                        <a href="{{ route('blog.edit', $post->id) }}" class="btn btn-warning">
                             <i class="fa fa-edit"></i> Edit Postingan Ini
                         </a>
+
+                        <form action="{{ route('blog.destroy', $post->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus post ini?')">
+                                <i class="fa fa-trash"></i> Hapus Postingan Ini
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

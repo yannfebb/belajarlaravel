@@ -11,15 +11,28 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="#" method="POST">
+                <form method="POST" action="{{ route('blog.store') }}">
                     @csrf
                     <div class="form-group">
                         <label>Judul</label>
-                        <input type="text" class="form-control" placeholder="Contoh: Cara Hack NASA pakai CSS">
+                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Contoh: Cara Hack NASA pakai CSS" value="{{ old('title') }}" required>
+                        @error('title')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label>Konten</label>
-                        <textarea class="form-control" rows="4"></textarea>
+                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" rows="4" required>{{ old('content') }}</textarea>
+                        @error('content')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" placeholder="url-slug-post" value="{{ old('slug') }}" required>
+                        @error('slug')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-success">Simpan</button>
                     <a href="{{ url('blog') }}" class="btn btn-secondary">Kembali</a>

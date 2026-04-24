@@ -17,7 +17,7 @@ return new class extends Migration
     $table->string('name');
     $table->string('email');
     $table->text('comment');
-    $table->timestamp('created_at')->nullable();
+    $table->timestamps(); // Ini akan generate created_at & updated_at sekaligus
 });
 
 

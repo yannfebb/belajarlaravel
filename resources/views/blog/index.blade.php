@@ -39,6 +39,14 @@
 <a href="{{ route('blog.edit', $post->id) }}" class="btn btn-sm btn-warning">
 <i class="fas fa-edit"></i> Edit
 </a>
+
+<form action="{{ route('blog.destroy', $post->id) }}" method="POST" style="display:inline;">
+@csrf
+@method('DELETE')
+<button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus post ini?')">
+<i class="fas fa-trash"></i> Hapus
+</button>
+</form>
 </div>
 
 </div>

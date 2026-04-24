@@ -3,7 +3,7 @@
 @section('content')
 <div class="content-header">
     <div class="container-fluid">
-        <h1 class="m-0">Edit Post: {{ $post['judul'] }}</h1>
+        <h1 class="m-0">Edit Post: {{ $post->title }}</h1>
     </div>
 </div>
 
@@ -11,19 +11,32 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="#" method="POST">
+                <form method="POST" action="{{ route('blog.update', $post->id) }}">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
                         <label>Judul</label>
-                        <input type="text" class="form-control" value="{{ $post['judul'] }}">
+                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ $post->title }}" required>
+                        @error('title')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label>Isi Konten</label>
-                        <textarea class="form-control" rows="4">{{ $post['isi'] }}</textarea>
+                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" rows="4" required>{{ $post->content }}</textarea>
+                        @error('content')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ $post->slug }}" required>
+                        @error('slug')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-warning">Update</button>
-                    <a href="{{ url('blogs') }}" class="btn btn-secondary">Batal</a>
+                    <a href="{{ route('blog.index') }}" class="btn btn-secondary">Batal</a>
                 </form>
             </div>
         </div>

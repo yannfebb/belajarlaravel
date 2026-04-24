@@ -35,6 +35,10 @@
 
             <button type="submit">Login</button>
         </form>
+
+        <div style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+            Belum punya akun? <a href="{{ route('register') }}" style="color: #00bfff; text-decoration: none;">Daftar di sini</a>
+        </div>
     </div>
 </body>
 </html>
