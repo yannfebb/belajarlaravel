@@ -32,7 +32,7 @@
 
         <form method="POST" action="{{ route('login.store') }}">
             @csrf
-
+{{-- pake email harusnya --}}
             <label for="name">nama</label>
             <input type="text" id="name" name="name" value="{{ old('name') }}" required autofocus>
 

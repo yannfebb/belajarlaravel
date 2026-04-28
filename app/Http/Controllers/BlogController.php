@@ -83,6 +83,7 @@ class BlogController extends Controller
     public function destroy(string $id)
     {
         $post = Post::findOrFail($id);
+// ini buat apa fungsinya?? kalo memang tiap user hanya bisa menghapus postnya sendiri, maka kita harus cek apakah user yang sedang login adalah pemilik post tersebut atau bukan. Jika bukan, maka kita akan menolak akses dengan memberikan respon 403 Forbidden. Ini adalah langkah penting untuk menjaga keamanan aplikasi dan mencegah pengguna lain menghapus post yang bukan miliknya.
 
         // Cek apakah user adalah pemilik post
         if ($post->user_id !== auth()->id()) {
