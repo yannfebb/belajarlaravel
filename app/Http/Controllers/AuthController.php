@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         $credentials = $request->validate([
-            'name' => ['required'],
+            'email' => ['required', 'email'],
             'password' => ['required']
         ]);
 
@@ -28,8 +28,8 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'nama' => 'nama atau password yang Anda masukkan salah.',
-        ])->onlyInput('name');
+            'email' => 'Email atau password yang Anda masukkan salah.',
+        ])->onlyInput('email');
     }
 
     public function logout(Request $request)
