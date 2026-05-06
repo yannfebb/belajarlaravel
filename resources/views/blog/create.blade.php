@@ -1,44 +1,70 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-header">
+    <!-- Breadcrumb Navigation -->
     <div class="container-fluid">
-        <h1 class="m-0">Buat Post Baru</h1>
+        <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb" style="background-color: transparent; padding: 0; border-bottom: 2px solid #E8EEF5;">
+                <li class="breadcrumb-item"><a href="/" style="color: #4A90E2; text-decoration: none;"><i class="fas fa-home"></i> Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('blog.index') }}" style="color: #4A90E2; text-decoration: none;"><i class="fas fa-newspaper"></i> Blog Posts</a></li>
+                <li class="breadcrumb-item active"><i class="fas fa-plus-circle"></i> Create New Post</li>
+            </ol>
+        </nav>
     </div>
-</div>
 
-<section class="content">
+    <!-- Header Section -->
+    <div class="container-fluid mb-4">
+        <h1 style="margin: 0; color: #2C3E50; font-size: 28px; font-weight: 700;">
+            <i class="fas fa-plus-circle" style="color: #50C878;"></i> Create New Blog Post
+        </h1>
+        <p style="color: #7F8C8D; margin-top: 10px;">Share your thoughts and create engaging content</p>
+    </div>
+
+    <!-- Form Section -->
     <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-                <form method="POST" action="{{ route('blog.store') }}">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card" style="border: 1px solid #E8EEF5; border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 144, 226, 0.08);">
+                    <div class="card-body" style="padding: 30px;">
+                        <form method="POST" action="{{ route('blog.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label>Judul</label>
-                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Contoh: Cara Hack NASA pakai CSS" value="{{ old('title') }}" required>
+                        <label style="color: #2C3E50; font-weight: 600;">Post Title</label>
+                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Enter an engaging title for your post" value="{{ old('title') }}" required>
                         @error('title')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label>Konten</label>
-                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" rows="4" required>{{ old('content') }}</textarea>
+                        <label style="color: #2C3E50; font-weight: 600;">Content</label>
+                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" rows="6" placeholder="Write your post content here..." required>{{ old('content') }}</textarea>
                         @error('content')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label>Slug</label>
-                        <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" placeholder="url-slug-post" value="{{ old('slug') }}" required>
+                        <label style="color: #2C3E50; font-weight: 600;">URL Slug</label>
+                        <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" placeholder="post-url-slug" value="{{ old('slug') }}" required>
+                        <small style="color: #7F8C8D;">URL-friendly version of your title</small>
                         @error('slug')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-success">Simpan</button>
-                    <a href="{{ url('blog') }}" class="btn btn-secondary">Kembali</a>
-                </form>
+
+                    <div style="display: flex; gap: 12px; margin-top: 30px;">
+                        <button type="submit" class="btn btn-success" style="flex: 1; padding: 12px 24px;">
+                            <i class="fas fa-save"></i> Publish Post
+                        </button>
+                        <a href="{{ route('blog.index') }}" class="btn btn-secondary" style="flex: 1; padding: 12px 24px; text-align: center;">
+                            <i class="fas fa-arrow-left"></i> Back to Posts
+                        </a>
+                    </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
 @endsection
