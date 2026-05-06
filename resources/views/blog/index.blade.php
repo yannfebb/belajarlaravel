@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- tambahkan button untuk menambahkan post --}}
     <div class="row">
 
         @foreach ($posts as $post)

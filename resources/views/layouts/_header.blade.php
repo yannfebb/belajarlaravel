@@ -12,9 +12,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/index" class="nav-link">Contact</a>
       </li>
-    </ul>
-
-    <li class="nav-item d-none d-sm-inline-block">
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="/index" class="nav-link">New</a>
       </li>
     </ul>

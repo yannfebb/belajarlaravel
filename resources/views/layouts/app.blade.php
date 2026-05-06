@@ -14,20 +14,14 @@
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-<div class="wrapper">
 
     @include('layouts._header')
-
     @include('layouts._sidebar')
-
     <div class="content-wrapper">
         @yield('content')
     </div>
 
     @include('layouts._footer')
-
-</div>
-
 <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>

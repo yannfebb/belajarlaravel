@@ -3,6 +3,16 @@
    Override & Extend AdminLTE
    ======================================== */
 
+/* ===== LAYOUT SPACING ===== */
+.content-wrapper {
+    padding-top: 120px !important;
+    margin-left: 250px;
+}
+
+.layout-navbar-fixed .content-wrapper {
+    padding-top: 120px !important;
+}
+
 /* ===== GRID LAYOUT ===== */
 .row {
     display: -ms-flexbox;
@@ -11,6 +21,7 @@
   flex-wrap: wrap;
   margin-right: -7px;
   margin-left: -7px;
+  margin-top: 30px;
   }
     /*display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -72,6 +83,15 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.main-header {
+    height: auto;
+}
+
+.content-wrapper {
+    margin-top: 0;
+    padding-top: calc(1rem + 56px);
 }
 
 /* ===== BUTTON STYLING ===== */
