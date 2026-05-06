@@ -1,0 +1,5 @@
+tambahkan lagi untuk crud berdasarkan category dan kalo bisa tambahkan tags dengan relasi many to many
+untuk login pake email jangan pake name bisa jadi nanti user ada nama yang sama (duplicate value) yang harus di antisipasi
+untuk ui buat lebih family friendly lagi tambahkan btn btn untuk mengarahkan users
+untuk crud belajar lagi untuk validasi data dan layout bikin lebih baik lagi overall sudah baik
+
