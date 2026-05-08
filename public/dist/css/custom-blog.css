@@ -99,6 +99,21 @@
     transition: all 0.2s ease;
 }
 
+/* Perintah untuk mendorong tombol ke kanan */
+.blog-header-flex {
+    display: flex;
+    justify-content: space-between; /* Judul di kiri, tombol di kanan */
+    align-items: center; /* Sejajar secara vertikal */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Pastikan warna teks judul tetap putih sesuai tema kamu */
+.blog-header-flex h2 {
+    color: var(--text-main);
+    font-weight: 800;
+}
+
 .btn-sm { padding: 6px 12px; font-size: 0.85rem; }
 
 .btn-primary { background-color: var(--primary); color: #fff; }

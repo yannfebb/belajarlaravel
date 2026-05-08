@@ -2,10 +2,10 @@
 
 @section('content')
 <!-- Header dengan tombol create post -->
-<div class="mb-4">
-    <h2 class="mb-3">Blog Posts</h2>
+<div class="blog-header-flex mb-4">
+    <h2 class="m-0">Blog Posts</h2>
     <a href="{{ route('blog.create') }}" class="btn btn-success">
-        <i class="fas fa-plus"></i> Create New Post
+        <i class="fas fa-plus"></i> Buat Post Baru
     </a>
 </div>
 
