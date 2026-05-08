@@ -1,138 +1,139 @@
 /* ========================================
-   CUSTOM BLOG STYLING
-   Override & Extend AdminLTE
+   MODERN BLOG STYLING
+   Optimized for AdminLTE 3
    ======================================== */
 
-/* ===== GRID LAYOUT ===== */
-.row {
-    display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -7px;
-  margin-left: -7px;
-  }
-    /*display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 0;
-    margin: 0;###
-
-
-.col-md-4 {
-    width: 100%;
+:root {
+    --primary: #4A90E2;
+    --primary-dark: #357ABD;
+    --success: #50C878;
+    --warning: #FF9F43;
+    --danger: #FF6B6B;
+    --bg-main: #2C3E50; /* Abu-abu sangat muda agar mata tidak cepat lelah */
+    --text-main: #ffffff;
+    --text-light: #7F8C8D;
+    --border-color: #E8EEF5;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ===== CARD STYLING ===== */
+/* ===== BASE LAYOUT ===== */
+.content-wrapper {
+    background-color: var(--bg-main) !important;
+}
+
+/* Spasi container agar tidak terlalu mepet ke pinggir */
+.container-fluid {
+    padding: 0 20px;
+}
+
+/* ===== CARD BLOG (INDEX) ===== */
 .card {
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    overflow: hidden;
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 25px;
+    background: #fff;
 }
 
 .card:hover {
-    border-color: #007bff;
-    box-shadow: 0 8px 16px rgba(0,123,255,0.2);
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(74, 144, 226, 0.12);
 }
 
+/* Card Header dengan Gradient Soft */
 .card-header {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    padding: 15px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     border-bottom: none;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 1.2rem;
 }
 
 .card-title {
-    color: white;
-    margin: 0;
-    font-size: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-.card-body {
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-/* ===== TEXT STYLING ===== */
-.text-muted {
-    color: #999 !important;
-    font-size: 13px;
-}
-
-.text-muted i {
-    margin-right: 5px;
-}
-
-.card-body p {
-    color: #555;
-    line-height: 1.6;
+/* Memperbaiki tinggi konten agar seragam di Index */
+.card-body p.content-preview {
+    color: var(--text-main);
+    line-height: 1.7;
+    height: 75px; /* Menjaga tinggi agar card sejajar */
+    overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
-/* ===== BUTTON STYLING ===== */
-.mt-3 {
-    display: flex;
-    gap: 8px;
-    margin-top: 15px;
+/* ===== FORM STYLING (CREATE & EDIT) ===== */
+.form-group label {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
 }
 
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+}
+
+/* ===== BUTTON SYSTEM ===== */
 .btn {
-    flex: 1;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border: none;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 500;
     transition: all 0.2s ease;
-    padding: 8px 12px !important;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    color: white;
+.btn-sm { padding: 6px 12px; font-size: 0.85rem; }
+
+.btn-primary { background-color: var(--primary); color: #fff; }
+.btn-primary:hover { background-color: var(--primary-dark); box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3); }
+
+.btn-success { background-color: var(--success); color: #fff; }
+.btn-success:hover { box-shadow: 0 4px 12px rgba(80, 200, 120, 0.3); }
+
+.btn-warning { background-color: var(--warning); color: #fff; }
+.btn-danger { background-color: var(--danger); color: #fff; }
+
+/* Grouping tombol di card footer agar rapi */
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.2rem;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+/* ===== BREADCRUMB & TITLES ===== */
+.content-header h1 {
+    font-weight: 800;
+    color: var(--text-main);
+    font-size: 1.8rem;
 }
 
-.btn-warning {
-    background-color: #ffc107;
-    color: black;
+.breadcrumb-item a { color: var(--primary); font-weight: 500; }
+
+/* ===== DETAIL POST VIEW ===== */
+.post-content {
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-.btn-warning:hover {
-    background-color: #e0a800;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-danger:hover {
-    background-color: #c82333;
-}
-
-/* ===== RESPONSIVE ===== */
+/* Responsif */
 @media (max-width: 768px) {
-    .row {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .row {
-        grid-template-columns: 1fr;
-    }
-
-    .mt-3 {
-        flex-direction: column;
-    }
+    .btn { width: 100%; margin-bottom: 5px; }
+    .card-footer { text-align: center !important; }
 }
