@@ -1,8 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- tambahkan button untuk menambahkan post --}}
-    <div class="row">
+<!-- Header dengan tombol create post -->
+<div class="mb-4">
+    <h2 class="mb-3">Blog Posts</h2>
+    <a href="{{ route('blog.create') }}" class="btn btn-success">
+        <i class="fas fa-plus"></i> Create New Post
+    </a>
+</div>
+
+<div class="row">
 
         @foreach ($posts as $post)
             <div class="col-md-4">
@@ -33,7 +40,7 @@
 
                         <div class="mt-3">
                             <a href="{{ route('blog.show', $post->id) }}" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye"></i> Show
+                                <i class="fas fa-eye"></i> Shows
                             </a>
 
                             <a href="{{ route('blog.edit', $post->id) }}" class="btn btn-sm btn-warning">
