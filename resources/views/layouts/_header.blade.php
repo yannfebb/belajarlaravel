@@ -8,8 +8,8 @@
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('blog.index') }}" class="nav-link">
-          <i class="fas fa-blog"></i> Blog
+        <a href="welcome" class="nav-link">
+          <i class="fas fa-blog"></i> Support Dev
         </a>
       </li>
     </ul>
