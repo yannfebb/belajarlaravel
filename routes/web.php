@@ -6,12 +6,18 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogUserController;
 
+use App\Models\Post;
+
 Route::get('/', function () {
-    return view('public.home');
+
+    $blogs = Post::latest()->take(3)->get();
+
+    return view('public.home', compact('blogs'));
 });
 Route::get('/about', function () {
     return view('public.about');
 });
+
 
 Route::get('/blog', [BlogUserController::class, 'index'])->name('blog.user.index');
 Route::get('/blog/{slug}', [BlogUserController::class, 'show'])->name('blog.user.show');

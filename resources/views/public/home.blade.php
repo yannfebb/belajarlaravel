@@ -1,11 +1,11 @@
 @extends('layouts.user-app')
 @section('content')
  <!-- Hero Start -->
-        <div class="container-fluid py-5 hero-header wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid py-5 hero-header wow fadeIn" >
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-7 col-md-12">
-                        <h1 class="mb-3 text-primary">We Care Your Baby</h1>
+                        
                         <h1 class="mb-5 display-1 text-white">The Best Play Area For Your Kids</h1>
                         <a href="" class="btn btn-primary px-4 py-3 px-md-5  me-4 btn-border-radius">Get Started</a>
                         <a href="" class="btn btn-primary px-4 py-3 px-md-5 btn-border-radius">Learn More</a>
@@ -20,9 +20,9 @@
         <div class="container-fluid py-5 about bg-light">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="col-lg-5 wow fadeIn" >
                         <div class="video border">
-                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/watch?v=VunFGA9YUoM" data-bs-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
@@ -144,94 +144,66 @@
                     <h1 class="mb-5 display-3">We Offer An Exclusive Program For Kids</h1>
                 </div>
                 <div class="row g-5 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="program-item rounded">
-                            <div class="program-img position-relative">
-                                <div class="overflow-hidden img-border-radius">
-                                    <img src="img/program-1.jpg" class="img-fluid w-100" alt="Image">
-                                </div>
-                                <div class="px-4 py-2 bg-primary text-white program-rate">$60.99</div>
-                            </div>
-                            <div class="program-text bg-white px-4 pb-3">
-                                <div class="program-text-inner">
-                                    <a href="#" class="h4">English For Today</a>
-                                    <p class="mt-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed purus consectetur,</p>
-                                </div>
-                            </div>
-                            <div class="program-teacher d-flex align-items-center border-top border-primary bg-white px-4 py-3">
-                                <img src="img/program-teacher.jpg" class="img-fluid rounded-circle p-2 border border-primary bg-white" alt="Image" style="width: 70px; height: 70px;">
-                                <div class="ms-3">
-                                    <h6 class="mb-0 text-primary">Mary Mordern</h6>
-                                    <small>Arts Designer</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between px-4 py-2 bg-primary rounded-bottom">
-                                <small class="text-white"><i class="fas fa-wheelchair me-1"></i> 30 Sits</small>
-                                <small class="text-white"><i class="fas fa-book me-1"></i> 11 Lessons</small>
-                                <small class="text-white"><i class="fas fa-clock me-1"></i> 60 Hours</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.3s">
-                        <div class="program-item rounded">
-                            <div class="program-img position-relative">
-                                <div class="overflow-hidden img-border-radius">
-                                    <img src="img/program-2.jpg" class="img-fluid w-100" alt="Image">
-                                </div>
-                                <div class="px-4 py-2 bg-primary text-white program-rate">$60.99</div>
-                            </div>
-                            <div class="program-text bg-white px-4 pb-3">
-                                <div class="program-text-inner">
-                                    <a href="#" class="h4">Graphics Arts</a>
-                                    <p class="mt-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed purus consectetur,</p>
-                                </div>
-                            </div>
-                            <div class="program-teacher d-flex align-items-center border-top border-primary bg-white px-4 py-3">
-                                <img src="img/program-teacher.jpg" class="img-fluid rounded-circle p-2 border border-primary bg-white" alt="" style="width: 70px; height: 70px;">
-                                <div class="ms-3">
-                                    <h6 class="mb-0 text-primary">Mary Mordern</h6>
-                                    <small>Arts Designer</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between px-4 py-2 bg-primary rounded-bottom">
-                                <small class="text-white"><i class="fas fa-wheelchair me-1"></i> 30 Sits</small>
-                                <small class="text-white"><i class="fas fa-book me-1"></i> 11 Lessons</small>
-                                <small class="text-white"><i class="fas fa-clock me-1"></i> 60 Hours</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.5s">
-                        <div class="program-item rounded">
-                            <div class="program-img position-relative">
-                                <div class="overflow-hidden img-border-radius">
-                                    <img src="img/program-3.jpg" class="img-fluid w-100" alt="Image">
-                                </div>
-                                <div class="px-4 py-2 bg-primary text-white program-rate">$60.99</div>
-                            </div>
-                            <div class="program-text bg-white px-4 pb-3">
-                                <div class="program-text-inner">
-                                    <a href="#" class="h4">General Science</a>
-                                    <p class="mt-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed purus consectetur,</p>
-                                </div>
-                            </div>
-                            <div class="program-teacher d-flex align-items-center border-top border-primary bg-white px-4 py-3">
-                                <img src="img/program-teacher.jpg" class="img-fluid rounded-circle p-2 border border-primary bg-white" alt="" style="width: 70px; height: 70px;">
-                                <div class="ms-3">
-                                    <h6 class="mb-0 text-primary">Mary Mordern</h6>
-                                    <small>Arts Designer</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between px-4 py-2 bg-primary rounded-bottom">
-                                <small class="text-white"><i class="fas fa-wheelchair me-1"></i> 30 Sits</small>
-                                <small class="text-white"><i class="fas fa-book me-1"></i> 11 Lessons</small>
-                                <small class="text-white"><i class="fas fa-clock me-1"></i> 60 Hours</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-inline-block text-center wow fadeIn" data-wow-delay="0.1s">
-                        <a href="#" class="btn btn-primary px-5 py-3 text-white btn-border-radius">Vew All Programs</a>
-                    </div>
+
+    @foreach($blogs as $blog)
+        <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn">
+
+            <div class="blog-item rounded-bottom">
+
+                <div class="blog-img overflow-hidden position-relative img-border-radius">
+
+                    <img src="{{ asset('storage/' . $blog->image) }}"
+                         class="img-fluid w-100"
+                         alt="">
+
                 </div>
+
+                <div class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments">
+
+                    <small class="text-dark">
+                        <i class="fas fa-calendar me-1 text-dark"></i>
+
+                        {{ $blog->created_at->format('d M Y') }}
+                    </small>
+
+                </div>
+
+                <div class="px-4 pb-4 bg-light rounded-bottom">
+
+                    <div class="blog-text-inner">
+
+                        <a href="{{ route('blog.show', $blog->slug) }}"
+                           class="h4">
+
+                            {{ $blog->title }}
+
+                        </a>
+
+                        <p class="mt-3 mb-4">
+                            {{ Str::limit($blog->content, 100) }}
+                        </p>
+
+                    </div>
+
+                    <div class="text-center">
+
+                        <a href="{{ route('blog.show', $blog->slug) }}"
+                           class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    @endforeach
+
+</div>
             </div>
         </div>
         <!-- Program End -->
