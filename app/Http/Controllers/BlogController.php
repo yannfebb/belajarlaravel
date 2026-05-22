@@ -43,7 +43,8 @@ class BlogController extends Controller
 
         Post::create($validated);
 
-        return redirect()->route('blog.index')->with('success', 'Post berhasil dibuat!');
+        return redirect()->route('blog.index')
+            ->with('success', 'Post berhasil dibuat!');
     }
 
     public function edit(string $id)
@@ -72,18 +73,33 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'slug' => 'required|string|unique:posts,slug,' . $post->id
+            'slug' => 'required|string|unique:posts,slug,' . $post->id,
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        $post->update($validated);
+        // Upload foto profile user
+        if ($request->hasFile('photo')) {
 
-        return redirect()->route('blog.show', $post->id)->with('success', 'Post berhasil diperbarui!');
+            $path = $request->file('photo')->store('users', 'public');
+
+            auth()->user()->update([
+                'photo' => $path
+            ]);
+        }
+
+        $post->update([
+            'title' => $validated['title'],
+            'content' => $validated['content'],
+            'slug' => $validated['slug']
+        ]);
+
+        return redirect()->route('blog.show', $post->id)
+            ->with('success', 'Post berhasil diperbarui!');
     }
 
     public function destroy(string $id)
     {
         $post = Post::findOrFail($id);
-// ini buat apa fungsinya?? kalo memang tiap user hanya bisa menghapus postnya sendiri, maka kita harus cek apakah user yang sedang login adalah pemilik post tersebut atau bukan. Jika bukan, maka kita akan menolak akses dengan memberikan respon 403 Forbidden. Ini adalah langkah penting untuk menjaga keamanan aplikasi dan mencegah pengguna lain menghapus post yang bukan miliknya.
 
         // Cek apakah user adalah pemilik post
         if ($post->user_id !== auth()->id()) {
@@ -92,6 +108,7 @@ class BlogController extends Controller
 
         $post->delete();
 
-        return redirect()->route('blog.index')->with('success', 'Post berhasil dihapus!');
+        return redirect()->route('blog.index')
+            ->with('success', 'Post berhasil dihapus!');
     }
 }

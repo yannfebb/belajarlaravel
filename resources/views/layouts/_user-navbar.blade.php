@@ -3,14 +3,15 @@
     <div class="container topbar bg-primary d-none d-lg-block py-2" style="border-radius: 0 40px">
         <div class="d-flex justify-content-between">
             <div class="top-info ps-2">
-                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
+                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="https://pddikti.kemdiktisaintek.go.id/detail-pt/-rXvV_0Hkn-6GhTYKm7jnq-8If7jfoDS6o5ElQnP4tysLQvouACgLXmGdZiSh-lPWCUr3g%3D%3D" 
+                        class="text-white">Polbel</a></small>
                 <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
             </div>
             <div class="top-link pe-2">
-                <a href="" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-secondary"></i></a>
-                <a href="" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-twitter text-secondary"></i></a>
-                <a href="" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-instagram text-secondary"></i></a>
-                <a href="" class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-secondary"></i></a>
+                <a href="https://facebook.com/share/1HqLFdqPzx/" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-secondary"></i></a>
+                
+                <a href="https://instagram.com/yannfebb26"  class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-instagram text-secondary"></i></a>
+                
             </div>
         </div>
     </div>
@@ -26,7 +27,7 @@
                 <div class="navbar-nav mx-auto">
                     <a href="/" class="dropdown-item">Home</a>
                     <a href="/about" class="dropdown-item">About</a>
-                    <a href="blog.html" class="dropdown-item">Our Blog</a>
+                    <a href="/blog" class="dropdown-item">Our Blog</a>
                     <a href="team.html" class="dropdown-item">Our Team</a>
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                     <a href="admin" class="dropdown-item">Admin Page</a>

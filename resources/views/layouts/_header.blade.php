@@ -12,6 +12,11 @@
           <i class="fas fa-blog"></i> Support Dev
         </a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/blog" class="nav-link">
+          <i class="fas fa-blog"></i> Balik ke user
+        </a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
