@@ -35,11 +35,16 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'slug' => 'required|string|unique:posts,slug'
+            'slug' => 'required|string|unique:posts,slug',
+            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
         $validated['user_id'] = auth()->id();
         $validated['category_id'] = 1;
+
+        if ($request->hasFile('featured_image')) {
+            $validated['featured_image'] = $request->file('featured_image')->store('posts', 'public');
+        }
 
         Post::create($validated);
 
@@ -74,24 +79,14 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'slug' => 'required|string|unique:posts,slug,' . $post->id,
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        // Upload foto profile user
-        if ($request->hasFile('photo')) {
-
-            $path = $request->file('photo')->store('users', 'public');
-
-            auth()->user()->update([
-                'photo' => $path
-            ]);
+        if ($request->hasFile('featured_image')) {
+            $validated['featured_image'] = $request->file('featured_image')->store('posts', 'public');
         }
 
-        $post->update([
-            'title' => $validated['title'],
-            'content' => $validated['content'],
-            'slug' => $validated['slug']
-        ]);
+        $post->update($validated);
 
         return redirect()->route('blog.show', $post->id)
             ->with('success', 'Post berhasil diperbarui!');

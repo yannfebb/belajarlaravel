@@ -28,10 +28,9 @@
                     <a href="/" class="dropdown-item">Home</a>
                     <a href="/about" class="dropdown-item">About</a>
                     <a href="/blog" class="dropdown-item">Our Blog</a>
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    <a href="admin" class="dropdown-item">Admin Page</a>
-                    <a href="contact.html" class="dropdown-item">Contact</a>
+                    <a href="/dev" class="dropdown-item">Developer</a>
+                    <a href="/admin" class="dropdown-item">Admin Page</a>
+                    <a href="/contact" class="dropdown-item">Contact</a>
                 </div>
             </div>                
 </div>

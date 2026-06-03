@@ -53,11 +53,7 @@
                                             class="img-fluid rounded-circle p-2 rounded-top" 
                                             alt="Author"
 
-                                            style="
-                                                width: 70px;
-                                                height: 70px;
-                                                border-style: dotted;
-                                                border-color: var(--bs-primary) !important;"
+                                            
                                         >
                                     </div>
                                     <div class="ms-3">

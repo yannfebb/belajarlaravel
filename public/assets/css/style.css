@@ -713,3 +713,9 @@ h6,
 .navbar .nav-link:hover {
     color: #2563eb !important;
 }
+.blog-image {
+    height: 50px;
+    object-fit: cover;
+    border-style: dotted;
+    
+}

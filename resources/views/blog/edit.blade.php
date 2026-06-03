@@ -69,11 +69,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Foto Profile</label>
-
-                        <input type="file"
-                            name="photo"
-                            class="form-control">
+                        <label>Gambar</label>
+                        @if($post->featured_image)
+                            <div class="mb-2">
+                                <img src="{{ asset('storage/' . $post->featured_image) }}" alt="Gambar saat ini" style="max-width: 200px; max-height: 200px;">
+                                <p class="text-muted small">Gambar saat ini</p>
+                            </div>
+                        @endif
+                        <input type="file" name="featured_image" class="form-control @error('featured_image') is-invalid @enderror" accept="image/*">
+                        <small class="form-text text-muted">Format: JPG, JPEG, PNG. Maksimal: 2MB. Biarkan kosong jika tidak ingin mengubah gambar.</small>
+                        @error('featured_image')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn btn-warning">

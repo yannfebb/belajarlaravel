@@ -33,10 +33,13 @@
                     <div class="blog-img overflow-hidden position-relative img-border-radius">
 
                         <img src="{{ $blog->image 
-                            ? asset('storage/' . $blog->image) 
-                            : asset('img/blog-1.jpg') }}"
-                            class="img-fluid w-100"
-                            alt="{{ $blog->title }}">
+                        ? asset('storage/' . $blog->image) 
+                        : asset('img/blog-1.jpg') }}"
+
+                        class="img-fluid w-100"
+
+                        alt="{{ $blog->title }}"
+                    >
 
                     </div>
 

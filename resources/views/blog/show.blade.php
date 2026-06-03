@@ -29,12 +29,18 @@
                     </div>
                     <div class="card-body">
                         <h3>{{ $post->title }}</h3>
-                        
+
+                        @if($post->featured_image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="img-fluid" style="max-width: 100%; max-height: 400px; object-fit: cover;">
+                            </div>
+                        @endif
+
                         <p class="text-muted">
                             <i class="fa fa-calendar"></i>
                             Dibuat pada: {{ $post->created_at->format('d M Y H:i') }}
                         </p>
-                        
+
                         <hr>
 
                         <div class="post-content" style="font-size: 1.1rem; line-height: 1.6;">

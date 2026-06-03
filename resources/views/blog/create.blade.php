@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="{{ route('blog.store') }}">
+                <form method="POST" action="{{ route('blog.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Judul</label>
@@ -31,6 +31,14 @@
                         <label>Slug</label>
                         <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" placeholder="url-slug-post" value="{{ old('slug') }}" required>
                         @error('slug')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Gambar</label>
+                        <input type="file" name="featured_image" class="form-control @error('featured_image') is-invalid @enderror" accept="image/*">
+                        <small class="form-text text-muted">Format: JPG, JPEG, PNG. Maksimal: 2MB</small>
+                        @error('featured_image')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>

@@ -26,6 +26,11 @@
                             </button>
                         </div>
                     </div>
+        @if($post->featured_image)
+                            <div class="akuaku">
+                            <i class="fas fa-blog"></i> sudah ada gambarnya    
+                            </div>
+                        @endif
 
                     <div class="card-body">
 
