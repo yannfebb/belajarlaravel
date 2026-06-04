@@ -9,7 +9,7 @@ class BlogUserController extends Controller
 {
     public function index()
     {
-        $blogs = Post::latest()->paginate(6);
+        $blogs = Post::latest()->paginate(15);
         // dd($blogs);
         return view('public.blog', compact('blogs'));
     }
@@ -18,5 +18,5 @@ class BlogUserController extends Controller
         $blog = Post::where('slug', $slug)->firstOrFail();
         return view('public.blog-detail', compact('blog'));
     }
-
+    
 }

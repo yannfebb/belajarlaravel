@@ -36,7 +36,7 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'slug' => 'required|string|unique:posts,slug',
-            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
         ]);
 
         $validated['user_id'] = auth()->id();
@@ -79,7 +79,7 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'slug' => 'required|string|unique:posts,slug,' . $post->id,
-            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
         ]);
 
         if ($request->hasFile('featured_image')) {

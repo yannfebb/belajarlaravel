@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Dashboard')</title>
 
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/custom-blog.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@yield('title', 'Dashboard')</title>
 
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/css/custom-blog.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    </head>
 
-<div class="wrapper">
+    <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-    @include('layouts._header')
+    <div class="wrapper">
 
-    @include('layouts._sidebar')
+        @include('layouts._header')
 
-    <div class="content-wrapper">
-        @yield('content')
+        @include('layouts._sidebar')
+
+        <div class="content-wrapper">
+            @yield('content')
+        </div>
+
+        @include('layouts._footer')
+
     </div>
 
-    @include('layouts._footer')
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 
-</div>
+    @yield('scripts')
 
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-<script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
-
-@yield('scripts')
-
-</body>
+    </body>
 </html>

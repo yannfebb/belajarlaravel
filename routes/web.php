@@ -14,10 +14,14 @@ Route::get('/', function () {
 
     return view('public.home', compact('blogs'));
 });
+
 Route::get('/about', function () {
     return view('public.about');
 });
 
+Route::get('/test', function () {
+    return view('public.test');
+});
 
 Route::get('/blog', [BlogUserController::class, 'index'])->name('blog.user.index');
 Route::get('/blog/{slug}', [BlogUserController::class, 'show'])->name('blog.user.show');
