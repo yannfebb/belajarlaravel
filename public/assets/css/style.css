@@ -3,6 +3,9 @@
     --bs-primary: #2563eb !important;
     --bs-secondary: #1e40af !important;
     --bs-textnavbar: #000000 !important;
+    --gray: #cfcfcf;
+    --red: #dc3545;
+    --persona: #00bbfa;
 }
 
 .bg-primary,
@@ -20,6 +23,7 @@
     color: #ffffff !important;
     font-family: 'Arial', sans-serif;
 }
+
 /* 1. Memaksa wadah menu berjejer menyamping (horizontal) */
 .topbar .navbar-nav {
     display: flex !important;
@@ -150,10 +154,11 @@ h4, h5, h6, .h4, .h5, .h6 {
 
 .btn-border-radius { border-radius: 25% 10%; }
 .img-border-radius {
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:0 !important;}
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0 !important;
+}
 .title-border-radius { border-radius: 10% 30%; }
 
 /*** Topbar Start ***/
@@ -177,7 +182,6 @@ h4, h5, h6, .h4, .h5, .h6 {
     transition: 0.3s ease;
 }
 
-/* Memperbaiki selektor hover agar ikon medsos berubah warna dengan pas */
 .topbar .top-link a:hover {
     background: var(--bs-secondary) !important;
 }
@@ -201,7 +205,7 @@ h4, h5, h6, .h4, .h5, .h6 {
     font-size: 16px;
     font-weight: 600;
     transition: .5s;
-    color: #444444; /* Warna default teks nav sebelum di-hover */
+    color: #444444;
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -271,7 +275,6 @@ h4, h5, h6, .h4, .h5, .h6 {
     background-size: cover;
     border-radius: 10px;
 }
-
 
 @keyframes pulse-border {
     0% {
@@ -380,7 +383,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 
 /*** Programs Start ***/
 .program {
-    background: linear-gradient(rgba(30, 64, 175, 0.1), rgba(30, 64, 175, 0.1));
+    background: var(--bs-white);
 }
 
 .program .program-item .program-img .program-rate {
@@ -493,9 +496,30 @@ h4, h5, h6, .h4, .h5, .h6 {
     opacity: 1;
 }
 
-.blog .blog-item .blog-date-comments {
-    padding-top: 150px !important;
-    margin-top: -125px;
+.blog-date-comments span,
+.blog-item .d-flex span {
+    background-color: #000000 !important;
+    background: #000000 !important;
+
+    /* RESET POSISI BAWAAN TEMPLATE DI SINI */
+    padding-top: 1rem !important;   /* Mengembalikan padding atas ke ukuran normal */
+    margin-top: 0px !important;     /* Menghilangkan margin minus yang bikin teks naik ke gambar */
+}
+
+.blog-date-comments i,
+.blog-item .d-flex i {
+    color: #000000 !important; /* Ganti dengan warna pilihan Anda agar kontras */
+}
+
+
+/* Mengubah warna teks tanggal dan jumlah komentar */
+.blog-meta-text {
+    color: #000000 !important; /* Ganti #ffffff dengan warna pilihanmu */
+}
+
+/* Mengubah warna ikon kalender dan komentar di samping teks */
+.blog-meta-text i {
+    color: #000000 !important; /* Ganti #ffffff dengan warna pilihanmu */
 }
 
 .blog .blog-item .blog-img img,
@@ -593,42 +617,42 @@ h4, h5, h6, .h4, .h5, .h6 {
 
 .footer .footer-galary-img img:hover { transform: scale(1.2); }
 .footer-item a.text-body:hover { color: var(--bs-secondary) !important; }
-/* BLOG GRID 5 KOLOM */
 
-.blog-grid{
-    display:grid !important;
-    grid-template-columns:repeat(3,3fr) !important;
-    gap:30px !important;
+/* BLOG GRID 5 KOLOM */
+.blog-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 3fr) !important;
+    gap: 30px !important;
     margin-right: -7.5px;
     margin-left: -7.5px;
 }
 
-@media(max-width:1400px){
-    .blog-grid{
-        grid-template-columns:repeat(4,1fr);
+@media(max-width:1400px) {
+    .blog-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media(max-width:1200px){
-    .blog-grid{
-        grid-template-columns:repeat(3,1fr);
+@media(max-width:1200px) {
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media(max-width:768px){
-    .blog-grid{
-        grid-template-columns:repeat(2,1fr);
+@media(max-width:768px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width:576px){
-    .blog-grid{
-        grid-template-columns:1fr;
+@media(max-width:576px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 .containertopbar {
-    background: var(--bs-primary)
+    background: var(--bs-primary);
 }
 
 /* Latar belakang hitam pekat khas gaming */
@@ -663,14 +687,11 @@ h4, h5, h6, .h4, .h5, .h6 {
     color: #ffffff !important;
 }
 
-
-
 .search-icon-custom:hover {
     transform: scale(1.1); /* Efek membesar sedikit saat disentuh */
 }
 
 /* Mengatur warna tulisan teks alternatif logo */
-
 .instagram-link {
     color: #ffffff !important;
     font-family: 'Montserrat', sans-serif;
@@ -678,4 +699,29 @@ h4, h5, h6, .h4, .h5, .h6 {
     font-weight: 700;
     text-decoration: none !important;
     transition: color 0.2s;
+}
+
+/* Mengubah wadah kartu artikel menjadi hitam abu-abu gelap */
+.blog-item {
+    background-color: var(--persona) !important;
+    background: var(--gray) !important;
+    border: 1px solid #2d2d2d !important; /* Batas tipis agar antar kartu terlihat jelas */
+    overflow: hidden;
+}
+
+/* Memastikan area teks di dalam kartu mengikuti warna gelap */
+.blog-item .bg-light,
+.blog-item .px-4 {
+    background-color: var(--persona) !important;
+    background: var(--gray) !important;
+}
+
+/* Mengubah warna teks judul (Baris 39) */
+.blog-text-inner a.h4 {
+    color: #000000 !important; /* Ganti #ffffff dengan kode warna pilihanmu */
+}
+
+/* Mengubah warna teks judul saat kursor diarahkan ke sana (Hover) */
+.blog-text-inner a.h4:hover {
+    color: var(--bs-primary) !important; /* Otomatis berubah mengikuti warna primary saat di-hover */
 }
