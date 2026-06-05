@@ -24,9 +24,9 @@
                     <h1 class="mb-5 display-3">Semua Berita</h1>
                 </div>
                 
-                <div class="row g-5 justify-content-center">
+                <div class="blog-grid">
                     @forelse($blogs as $index => $blog)
-                        <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="{{ 0.1 + ($index * 0.2) }}s">
+                        <div class="wow fadeIn" data-wow-delay="{{ 0.1 + ($index * 0.2) }}s">
                             <div class="blog-item rounded-bottom">
                                 <div class="blog-img overflow-hidden position-relative img-border-radius">
                                     {{-- Menampilkan gambar fitur post, jika tidak ada memakai fallback placeholder --}}

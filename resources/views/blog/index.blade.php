@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <!-- Header dengan tombol create post -->
 <div class="blog-header-flex mb-4">
