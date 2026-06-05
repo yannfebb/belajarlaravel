@@ -1,7 +1,7 @@
 @extends('layouts.user-app')
 @section('content')
 
-<div class="container-fluid py-5 hero-header wow fadeIn">
+<div class="container-fluid py-5 hero-header wow fadeIn mt-5">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-7 col-md-12">

@@ -206,8 +206,8 @@ h4, h5, h6, .h4, .h5, .h6 {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active,
-.fixed-top.bg-white .navbar .navbar-nav .nav-link:hover,
-.fixed-top.bg-white .navbar .navbar-nav .nav-link.active {
+.bg-white .navbar .navbar-nav .nav-link:hover,
+.bg-white .navbar .navbar-nav .nav-link.active {
     color: var(--bs-primary) !important;
 }
 

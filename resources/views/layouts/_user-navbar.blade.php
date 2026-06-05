@@ -1,4 +1,4 @@
-<div class="container-fluid topbar bg-dark-custom d-none d-lg-block py-3 px-lg-5">
+<div class="container-fluid topbar bg-dark-custom d-none d-lg-block py-3 px-lg-5 fixed-top">
     <div class="d-flex justify-content-between align-items-center">
 
         <!-- Hapus tag double, langsung pasang class navbar-brand-custom di sini -->
