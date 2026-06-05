@@ -6,8 +6,7 @@
                 <h1 class="display-2 text-white mb-4">Our Blog</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
                         <li class="breadcrumb-item text-white" aria-current="page">Our Blog</li>
                     </ol>
                 </nav>
@@ -23,10 +22,11 @@
                     <a href="/blog" class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Blog</a>
                     <h1 class="mb-5 display-3">Semua Berita</h1>
                 </div>
-                
+
                 <div class="blog-grid">
+
                     @forelse($blogs as $index => $blog)
-                        <div class="wow fadeIn" data-wow-delay="{{ 0.1 + ($index * 0.2) }}s">
+                        <div class="wow fadeIn">
                             <div class="blog-item rounded-bottom">
                                 <div class="blog-img overflow-hidden position-relative img-border-radius">
                                     {{-- Menampilkan gambar fitur post, jika tidak ada memakai fallback placeholder --}}
@@ -45,15 +45,15 @@
                                 <div class="blog-content d-flex align-items-center px-4 py-3 bg-light">
                                     <div class="overflow-hidden rounded-circle rounded-top border border-primary">
                                         {{-- Gambar avatar penulis (Opsional: sesuaikan jika ada field foto di tabel user) --}}
-                                        <img 
-                                            src="{{ $blog->user && $blog->user->photo 
-                                                ? asset('storage/' . $blog->user->photo) 
+                                        <img
+                                            src="{{ $blog->user && $blog->user->photo
+                                                ? asset('storage/' . $blog->user->photo)
                                                 : asset('img/program-teacher.jpg') }}"
-                                                
-                                            class="img-fluid rounded-circle p-2 rounded-top" 
+
+                                            class="img-fluid rounded-circle p-2 rounded-top"
                                             alt="Author"
 
-                                            
+
                                         >
                                     </div>
                                     <div class="ms-3">

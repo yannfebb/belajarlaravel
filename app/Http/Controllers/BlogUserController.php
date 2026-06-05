@@ -10,8 +10,8 @@ class BlogUserController extends Controller
     public function index()
     {
         // Pastikan baris ini menggunakan paginate, bukan get()
-        $blogs = Post::latest()->paginate(15);
-        
+        $blogs = Post::latest()->paginate(100);
+        // dd($blogs);
         return view('public.blog', compact('blogs'));
     }
 

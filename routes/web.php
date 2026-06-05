@@ -8,9 +8,10 @@ use App\Http\Controllers\BlogUserController;
 
 use App\Models\Post;
 
+
 Route::get('/', function () {
 
-    $blogs = Post::latest()->take(3)->get();
+    $blogs = Post::latest()->take(15)->get();
 
     return view('public.home', compact('blogs'));
 });
