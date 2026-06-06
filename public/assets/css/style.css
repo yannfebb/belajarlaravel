@@ -295,7 +295,7 @@ h4, h5, h6, .h4, .h5, .h6 {
     position: relative;
     height: 100%;
     min-height: 400px;
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(../img/about.jpg);
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(../img/p3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -333,7 +333,14 @@ h4, h5, h6, .h4, .h5, .h6 {
 .video.border { border-radius: 50% 20% / 10% 40%; }
 
 .about {
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/background.jpg);
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/p3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/p3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -780,4 +787,56 @@ h4, h5, h6, .h4, .h5, .h6 {
 /* Mengubah warna teks judul saat kursor diarahkan ke sana (Hover) */
 .blog-text-inner a.h4:hover {
     color: var(--bs-primary) !important; /* Otomatis berubah mengikuti warna primary saat di-hover */
+}
+
+/*** Konten About Us ***/
+/* Menargetkan container row di dalam section .about */
+.about .row.g-5 {
+    justify-content: center !important; /* Memaksa kolom col-lg-7 bergeser ke as tengah */
+}
+
+/* Memaksa elemen teks, paragraf, dan tombol di dalam kolom ikut rata tengah */
+.about .col-lg-7 {
+    text-align: center !important;
+    margin: 0 auto !important; /* Memastikan kolom berada tepat di tengah */
+}
+
+/* Memastikan elemen baris list centang ikut mengumpul di tengah */
+.about .col-lg-7 .row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+col-lg-7 wow fadeIn
+/* Mengatur dua kolom list (col-lg-6) agar konten di dalamnya sejajar raki */
+.about .col-lg-7 .col-lg-6 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Membuat list teks centang sejajar secara vertikal */
+}
+
+/* Mengatur teks h6 agar ikon centangnya tetap lurus ke bawah dan rapi */
+.about .col-lg-7 h6 {
+    text-align: left !important;
+    width: 220px !important; /* Lebar statis pembungkus agar teks tidak berantakan */
+    display: block !important;
+}
+
+/* Memaksa tombol More Details untuk mengambil posisi center */
+.about .btn.btn-primary.btn-border-radius {
+    display: inline-block !important;
+    margin-top: 15px !important;
+}
+
+/* Mengatur teks deskripsi paragraf agar rata kanan-kiri dan ukurannya lebih besar */
+.about .col-lg-7 p {
+    text-align: justify !important;
+    font-size: 18px !important; /* Membesarkan ukuran teks (bawaannya biasanya 16px) */
+    line-height: 1.6 !important; /* Memberikan jarak antar baris agar lebih nyaman dibaca */
+    max-width: 800px !important; /* Membatasi lebar teks agar tetap proporsional di tengah */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 25px !important;
 }

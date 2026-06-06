@@ -19,7 +19,7 @@
         <div class="container-fluid program  py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
-                    <a href="/blog" class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Blog</a>
+
                     <h1 class="mb-5 display-3">Semua Berita</h1>
                 </div>
 
@@ -42,35 +42,14 @@
                                         Comments ({{ $blog->comments->count() }})
                                     </small>
                                 </div>
-                                <div class="blog-content d-flex align-items-center px-4 py-3 bg-light">
-                                    <div class="overflow-hidden rounded-circle rounded-top border border-primary">
-                                        {{-- Gambar avatar penulis (Opsional: sesuaikan jika ada field foto di tabel user) --}}
-                                        <img
-                                            src="{{ $blog->user && $blog->user->photo
-                                                ? asset('storage/' . $blog->user->photo)
-                                                : asset('img/program-teacher.jpg') }}"
-
-                                            class="img-fluid rounded-circle p-2 rounded-top"
-                                            alt="Author"
-
-
-                                        >
-                                    </div>
-                                    <div class="ms-3">
-                                        {{-- Menampilkan nama pembuat artikel melalui relasi user --}}
-                                        <h6 class="text-primary">{{ $blog->user->name ?? 'Anonymous' }}</h6>
-                                        {{-- Menampilkan nama kategori melalui relasi category --}}
-                                        <p class="text-muted">{{ $blog->category->name ?? 'Uncategorized' }}</p>
-                                    </div>
-                                </div>
                                 <div class="px-4 pb-4 bg-light rounded-bottom">
                                     <div class="blog-text-inner">
                                         <a href="{{ url('blog/' . $blog->slug) }}" class="h4">{{ $blog->title }}</a>
                                         {{-- Membatasi teks konten agar tidak terlalu panjang di card --}}
                                         <p class="mt-3 mb-4">{{ Str::limit(strip_tags($blog->content), 80, '...') }}</p>
                                     </div>
-                                    <div class="text-center">
-                                        <a href="{{ url('blog/' . $blog->slug) }}" class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius">View Details</a>
+                                    <div class="text-center mt-3">
+                                        <a href="{{ url('blog/' . $blog->slug) }}" class="btn btn-primary text-white px-4 py-2 btn-border-radius">View Details</a>
                                     </div>
                                 </div>
                             </div>

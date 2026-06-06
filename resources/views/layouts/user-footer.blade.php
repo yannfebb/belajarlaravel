@@ -11,7 +11,7 @@
                  <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                  <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                  <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                Designed By <a class="border-bottom" >HTML Codex</a> Template
+                Designed By <a class="border-bottom" >Miaw</a> Template
                 <a clas="border-bottom" href="https://themewagon.com">ThemeWagon</a>
             </div>
         </div>

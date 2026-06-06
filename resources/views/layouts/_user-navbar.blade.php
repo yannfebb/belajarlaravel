@@ -9,7 +9,6 @@
                 <a href="/" class="nav-item-custom {{ request()->is('/') ? 'active' : '' }}">Home</a>
                 <a href="/blog" class="nav-item-custom {{ request()->is('blog') ? 'active' : '' }}">Articles</a>
                 <a href="/about" class="nav-item-custom {{ request()->is('about') ? 'active' : '' }}">About</a>
-                <a href="/contact" class="nav-item-custom {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
                 <a href="/admin" class="nav-item-custom {{ request()->is('admin') ? 'active' : '' }}">Admin Page</a>
             </div>
         </div>
