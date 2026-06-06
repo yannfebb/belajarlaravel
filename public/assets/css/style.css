@@ -4,9 +4,11 @@
     --bs-secondary: #1e40af !important;
     --bs-textnavbar: #000000 !important;
     --gray: #cfcfcf;
-    --red: #dc3545;
+    --red:#d60000;
     --persona: #00bbfa;
 }
+
+
 
 .bg-primary,
 .btn-primary,
@@ -17,6 +19,11 @@
 
 .text-primary {
     color: #2563eb !important;
+}
+
+.text-custom{
+    color: #ffffff !important;
+    font-family: 'Arial', sans-serif;
 }
 
 .text-big {
@@ -142,9 +149,28 @@ h4, h5, h6, .h4, .h5, .h6 {
     font-weight: normal;
 }
 
-.btn.btn-primary {
-    border: 0;
-    color: var(--bs-white);
+.btn.btn-primary.btn-border-radius {
+    background-color: var(--bs-secondary) !important;
+    background: var(--bs-secondary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 10px 24px !important; /* Menyesuaikan px-4 py-2 dari HTML */
+    border-radius: 50px !important; /* Mengganti radius 25% 10% bawaan template menjadi bentuk kapsul yang rapi */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Efek saat kursor menempel (Hover) */
+.btn.btn-primary.btn-border-radius:hover {
+    background-color: var(--red) !important;
+    background: var(--red) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px); /* Tombol sedikit terangkat */
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3); /* Memberikan efek kilau bayangan sesuai warna primary */
 }
 
 .btn.btn-primary:hover {
@@ -478,6 +504,31 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 /*** Blog Start ***/
+
+.blog-item {
+    background-color: var(--persona) !important;
+    background: var(--gray) !important;
+    border: 1px solid #2d2d2d !important;
+    overflow: hidden;
+
+    /* TAMBAHKAN KODE BARU INI */
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important; /* Memaksa semua kartu dalam satu baris tingginya sama */
+}
+
+.blog-item .bg-light,
+.blog-item .px-4,
+.blog-item .blog-content { /* Gunakan class pembungkus teks yang ada di HTML Anda */
+    background-color: var(--persona) !important;
+    background: var(--gray) !important;
+
+    /* TAMBAHKAN KODE BARU INI */
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important; /* Memaksa area teks mengambil sisa ruang kosong */
+}
+
 .blog .blog-item .blog-img::after {
     position: absolute;
     content: "";
@@ -511,6 +562,11 @@ h4, h5, h6, .h4, .h5, .h6 {
     color: #000000 !important; /* Ganti dengan warna pilihan Anda agar kontras */
 }
 
+.blog-item .mt-3,
+.blog-item .text-center.mt-3 { /* Menyasar tag <div class="text-center mt-3"> pembungkus tombol */
+    margin-top: auto !important; /* Ini kunci utamanya, otomatis mendorong tombol ke dasar kartu */
+    padding-top: 15px !important; /* Memberi jarak aman dengan teks ringkasan di atasnya */
+}
 
 /* Mengubah warna teks tanggal dan jumlah komentar */
 .blog-meta-text {
@@ -657,7 +713,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 
 /* Latar belakang hitam pekat khas gaming */
 .bg-dark-custom {
-    background-color: #151515 !important;
+    background-color: #000000 !important;
 }
 
 /* Wadah menu navigasi */
