@@ -17,7 +17,16 @@ class BlogUserController extends Controller
 
     public function show($slug)
     {
+        // 1. Ambil data artikel yang sedang dibaca berdasarkan slug
         $blog = Post::where('slug', $slug)->firstOrFail();
-        return view('public.blog-detail', compact('blog'));
+
+        // 2. Ambil 3 artikel terbaru lainnya untuk bagian rekomendasi di bawah
+        $blogs = Post::where('id', '!=', $blog->id) // Supaya artikel yang lagi dibaca tidak muncul double di bawah
+                     ->latest()
+                     ->take(3) // Batasi cuma ambil 3 data agar pas dengan layout 3 kolom
+                     ->get();
+
+        // 3. Kirim variabel $blog dan $blogs ke file blade detail
+        return view('public.blog-detail', compact('blog', 'blogs'));
     }
 }
