@@ -524,6 +524,15 @@ h4, h5, h6, .h4, .h5, .h6 {
     height: 100% !important; /* Memaksa semua kartu dalam satu baris tingginya sama */
 }
 
+.blog-content-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: justify !important;
+    padding-left: 10px; /* Memberi jarak halus di sisi kiri agar tidak terlalu mepet ke gambar */
+    line-height: 1.8 !important; /* Membuat jarak antar baris kalimat sedikit lebih renggang agar tidak pusing dibaca */
+}
+
 .blog-item .bg-light,
 .blog-item .px-4,
 .blog-item .blog-content { /* Gunakan class pembungkus teks yang ada di HTML Anda */

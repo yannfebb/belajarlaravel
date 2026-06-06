@@ -20,7 +20,6 @@
 <div class="container-fluid py-5 about bg-light">
     <div class="container py-5">
         <div class="row g-5 align-items-start">
-
             <!-- Sisi Kiri: Gambar Unggulan Artikel -->
             <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="blog-detail-img border rounded overflow-hidden shadow-sm">
@@ -34,9 +33,7 @@
             <!-- Sisi Kanan: Konten dan Detail Artikel -->
             <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
                 <!-- Kategori Artikel -->
-                <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">
-                    {{ $blog->category->name ?? 'Uncategorized' }}
-                </h4>
+
 
                 <!-- Judul Artikel -->
                 <h1 class="text-dark mb-3 display-5">{{ $blog->title }}</h1>
