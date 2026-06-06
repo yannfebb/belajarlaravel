@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 
 class BlogUserController extends Controller
 {
-    public function index()
+    // 1. Tambahkan Request $request di dalam kurung index
+    public function index(Request $request)
     {
-        // Pastikan baris ini menggunakan paginate, bukan get()
-        $blogs = Post::latest()->paginate(100);
-        // dd($blogs);
+        $blogs = Post::latest()->paginate(6);
+
+        // 2. TAMBAHKAN LOGIKA INI: Cek jika request datang dari scroll AJAX
+        if ($request->ajax()) {
+            return view('public.partials.blog-list', compact('blogs'))->render();
+        }
+
         return view('public.blog', compact('blogs'));
     }
 
@@ -21,9 +26,9 @@ class BlogUserController extends Controller
         $blog = Post::where('slug', $slug)->firstOrFail();
 
         // 2. Ambil 3 artikel terbaru lainnya untuk bagian rekomendasi di bawah
-        $blogs = Post::where('id', '!=', $blog->id) // Supaya artikel yang lagi dibaca tidak muncul double di bawah
+        $blogs = Post::where('id', '!=', $blog->id)
                      ->latest()
-                     ->take(3) // Batasi cuma ambil 3 data agar pas dengan layout 3 kolom
+                     ->take(3)
                      ->get();
 
         // 3. Kirim variabel $blog dan $blogs ke file blade detail
