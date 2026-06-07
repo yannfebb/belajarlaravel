@@ -27,7 +27,7 @@
                     </div>
         @if($post->featured_image)
                             <div class="akuaku">
-                            <i class="fas fa-blog"></i> sudah ada gambarnya    
+                            <i class="fas fa-blog"></i> sudah ada gambarnya
                             </div>
                         @endif
 
@@ -59,7 +59,14 @@
                                 </button>
                             </form>
                         </div>
-
+                        <th>Tags</th>
+                        <td>
+                            @forelse($post->tags as $tag)
+                                <span class="badge badge-secondary text-capitalize mr-1">{{ $tag->name }}</span>
+                            @empty
+                                <span class="text-muted small">Tidak ada tag</span>
+                            @endforelse
+                        </td>
                     </div>
                 </div>
             </div>

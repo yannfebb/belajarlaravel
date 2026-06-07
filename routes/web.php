@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogUserController;
-
+use App\Http\Controllers\TagController;
 use App\Models\Post;
 
 
@@ -27,7 +27,8 @@ Route::get('/test', function () {
 Route::get('/blog', [BlogUserController::class, 'index'])->name('blog.user.index');
 Route::get('/blog/{slug}', [BlogUserController::class, 'show'])->name('blog.user.show');
 
-
+Route::resource('tag', TagController::class)->middleware('auth');
+// Pastikan middleware disesuaikan dengan sistem login dashboard admin Anda
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -51,4 +52,6 @@ Route::prefix('admin')->group(function () {
             return redirect()->route('blog.index');
         })->name('dashboard');
     });
+
+
 });

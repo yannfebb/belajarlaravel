@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -27,7 +28,11 @@ class BlogController extends Controller
 
     public function create()
     {
-        return view('blog.create');
+        $tags = Tag::all();
+
+        return view('blog.create', [
+            'tags' => $tags
+        ]);
     }
 
     public function store(Request $request)
@@ -36,7 +41,9 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'slug' => 'required|string|unique:posts,slug',
-            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'tags' => 'nullable|array|max:3', // KUNCI MAKSIMAL 3 TAG DI SINI
+            'tags.*' => 'exists:tags,id'
         ]);
 
         $validated['user_id'] = auth()->id();
@@ -46,7 +53,11 @@ class BlogController extends Controller
             $validated['featured_image'] = $request->file('featured_image')->store('posts', 'public');
         }
 
-        Post::create($validated);
+        $post = Post::create($validated);
+
+        if ($request->has('tags')) {
+            $post->tags()->sync($request->tags);
+        }
 
         return redirect()->route('blog.index')
             ->with('success', 'Post berhasil dibuat!');
@@ -56,13 +67,15 @@ class BlogController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        // Cek apakah user adalah pemilik post
         if ($post->user_id !== auth()->id()) {
             abort(403, 'Anda tidak memiliki akses untuk mengedit post ini.');
         }
 
+        $tags = Tag::all();
+
         return view('blog.edit', [
-            'post' => $post
+            'post' => $post,
+            'tags' => $tags
         ]);
     }
 
@@ -70,7 +83,6 @@ class BlogController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        // Cek apakah user adalah pemilik post
         if ($post->user_id !== auth()->id()) {
             abort(403, 'Anda tidak memiliki akses untuk mengubah post ini.');
         }
@@ -79,7 +91,9 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'slug' => 'required|string|unique:posts,slug,' . $post->id,
-            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'tags' => 'nullable|array|max:3', // KUNCI MAKSIMAL 3 TAG DI SINI
+            'tags.*' => 'exists:tags,id'
         ]);
 
         if ($request->hasFile('featured_image')) {
@@ -87,6 +101,12 @@ class BlogController extends Controller
         }
 
         $post->update($validated);
+
+        if ($request->has('tags')) {
+            $post->tags()->sync($request->tags);
+        } else {
+            $post->tags()->sync([]);
+        }
 
         return redirect()->route('blog.show', $post->id)
             ->with('success', 'Post berhasil diperbarui!');
@@ -96,7 +116,6 @@ class BlogController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        // Cek apakah user adalah pemilik post
         if ($post->user_id !== auth()->id()) {
             abort(403, 'Anda tidak memiliki akses untuk menghapus post ini.');
         }

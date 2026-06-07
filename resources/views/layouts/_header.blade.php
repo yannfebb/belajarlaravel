@@ -1,20 +1,25 @@
  <nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      
+
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">
+        <a href="/admin/blog" class="nav-link">
           <i class="fas fa-home"></i> Home
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="welcome" class="nav-link">
+        <a href="/about" class="nav-link">
           <i class="fas fa-blog"></i> Support Dev
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/blog" class="nav-link">
           <i class="fas fa-blog"></i> Balik ke user
+        </a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/tag" class="nav-link">
+          <i class="fas fa-blog"></i> Buat Tag
         </a>
       </li>
     </ul>
@@ -44,4 +49,3 @@
       </li>
     </ul>
 </nav>
-      

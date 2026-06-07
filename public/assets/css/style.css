@@ -850,3 +850,20 @@ col-lg-7 wow fadeIn
     margin-bottom: 25px !important;
     font-weight: bolder !important;
 }
+
+.badge-tag {
+    background-color: #4a4a4a; /* Warna abu-abu gelap sesuai gambar */
+    color: #ffffff !important;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.badge-tag:hover {
+    background-color: #fd7e14; /* Efek highlight oranye saat kursor diarahkan */
+    color: #fff !important;
+}

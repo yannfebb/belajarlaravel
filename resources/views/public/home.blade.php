@@ -6,7 +6,6 @@
         <div class="row g-5">
             <div class="col-lg-7 col-md-12">
                 <h1 class="mb-5 display-1 text-white"></h1>
-
             </div>
         </div>
     </div>
@@ -27,6 +26,25 @@
                         <img src="{{ $blog->featured_image ? asset('storage/' . $blog->featured_image) : asset('img/blog-1.jpg') }}" class="img-fluid w-100" alt="{{ $blog->title }}">
                     </div>
 
+                    <div class="px-4 pb-4 bg-light rounded-bottom">
+                        <div class="blog-text-inner" style="min-height: 120px;">
+                            <a href="{{ url('blog/' . $blog->slug) }}" class="h4 d-block mb-2 text-decoration-none text-white">{{ $blog->title }}</a>
+
+                            <div class="post-tags mb-3 d-flex flex-wrap" style="gap: 6px;">
+                                @foreach($blog->tags as $tag)
+                                    <a href="#" class="badge-tag" style="background-color: #4a4a4a; color: #ffffff !important; font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 4px; text-transform: capitalize; text-decoration: none;">
+                                        {{ $tag->name }}
+                                    </a>
+                                @endforeach
+                            </div>
+
+                            <p class="text-muted">{{ Str::limit(strip_tags($blog->content), 80, '...') }}</p>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="{{ url('blog/' . $blog->slug) }}" class="btn btn-primary text-white px-4 py-2 btn-border-radius">View Details</a>
+                        </div>
+                    </div>
+
                     <div class="d-flex justify-content-between px-4 py-3 border-bottom border-primary blog-date-comments">
                         <small class="blog-meta-text">
                             <i class="fas fa-calendar me-1"></i>
@@ -38,15 +56,7 @@
                         </small>
                     </div>
 
-                    <div class="px-4 pb-4 bg-light rounded-bottom">
-                        <div class="blog-text-inner" style="min-height: 120px;">
-                            <a href="{{ url('blog/' . $blog->slug) }}" class="h4 d-block mb-3 text-decoration-none text-white">{{ $blog->title }}</a>
-                            <p class="text-muted">{{ Str::limit(strip_tags($blog->content), 80, '...') }}</p>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="{{ url('blog/' . $blog->slug) }}" class="btn btn-primary text-white px-4 py-2 btn-border-radius">View Details</a>
-                        </div>
-                    </div>
+
 
                 </div>
             @empty

@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 
 class BlogUserController extends Controller
 {
-    // 1. Tambahkan Request $request di dalam kurung index
     public function index(Request $request)
     {
-        $blogs = Post::latest()->paginate(6);
+        // TAMBAHKAN dengan('tags') sebelum latest() agar data tag ikut terambil secara efisien
+        $blogs = Post::with('tags')->latest()->paginate(6);
 
-        // 2. TAMBAHKAN LOGIKA INI: Cek jika request datang dari scroll AJAX
         if ($request->ajax()) {
             return view('public.partials.blog-list', compact('blogs'))->render();
         }
@@ -22,11 +21,11 @@ class BlogUserController extends Controller
 
     public function show($slug)
     {
-        // 1. Ambil data artikel yang sedang dibaca berdasarkan slug
-        $blog = Post::where('slug', $slug)->firstOrFail();
+        // 1. Ambil data artikel yang sedang dibaca berdasarkan slug beserta tag-nya
+        $blog = Post::with('tags')->where('slug', $slug)->firstOrFail();
 
-        // 2. Ambil 3 artikel terbaru lainnya untuk bagian rekomendasi di bawah
-        $blogs = Post::where('id', '!=', $blog->id)
+        // 2. Ambil 3 artikel terbaru lainnya untuk bagian rekomendasi (ikut sertakan dengan('tags'))
+        $blogs = Post::with('tags')->where('id', '!=', $blog->id)
                      ->latest()
                      ->take(3)
                      ->get();

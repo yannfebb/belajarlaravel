@@ -41,7 +41,16 @@
                             Dibuat pada: {{ $post->created_at->format('d M Y H:i') }}
                         </p>
 
-                        <hr>
+                        <div class="mb-3">
+                            <strong>Tags Artikel:</strong>
+                            @forelse($post->tags as $tag)
+                                <span class="badge badge-info text-capitalize px-2 py-1 mr-1" style="font-size: 14px;">
+                                    <i class="fas fa-tag mr-1"></i> {{ $tag->name }}
+                                </span>
+                            @empty
+                                <span class="text-muted small">Artikel ini tidak memiliki tag.</span>
+                            @endforelse
+                        </div>
 
                         <div class="post-content" style="font-size: 1.1rem; line-height: 1.6;">
                             {{ $post->content }}
