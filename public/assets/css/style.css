@@ -842,10 +842,11 @@ col-lg-7 wow fadeIn
 /* Mengatur teks deskripsi paragraf agar rata kanan-kiri dan ukurannya lebih besar */
 .about .col-lg-7 p {
     text-align: justify !important;
-    font-size: 18px !important; /* Membesarkan ukuran teks (bawaannya biasanya 16px) */
+    font-size: 20px !important; /* Membesarkan ukuran teks (bawaannya biasanya 16px) */
     line-height: 1.6 !important; /* Memberikan jarak antar baris agar lebih nyaman dibaca */
     max-width: 800px !important; /* Membatasi lebar teks agar tetap proporsional di tengah */
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 25px !important;
+    font-weight: bolder !important;
 }
